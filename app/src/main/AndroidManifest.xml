@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cscodetech.partner">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+    <application
+        android:name="www.justme.co.in.vendor.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TownClap"
+        android:usesCleartextTraffic="true">
+        <activity android:name="www.justme.co.in.vendor.activity.AddCreditActivity"/>
+        <activity android:name="www.justme.co.in.vendor.activity.ServiceDetailActivity" />
+        <activity android:name="www.justme.co.in.vendor.activity.VerifyPhoneActivity" />
+        <activity android:name="www.justme.co.in.vendor.activity.CategoryActivity" />
+        <activity android:name="www.justme.co.in.vendor.activity.ForgotActivity" />
+        <activity android:name="www.justme.co.in.vendor.activity.ChanegPasswordActivity" />
+        <activity
+            android:name="www.justme.co.in.vendor.activity.FirstActivity"
+            android:theme="@style/Theme.Intro">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="www.justme.co.in.vendor.activity.HomeActivity" />
+        <activity
+            android:name="www.justme.co.in.vendor.activity.LoginActivity"
+            android:theme="@style/Theme.Intro" />
+        <activity android:name="www.justme.co.in.vendor.activity.MapActivity" />
+        <activity android:name="www.justme.co.in.vendor.activity.RazerpayActivity" />
+        <activity android:name="www.justme.co.in.vendor.activity.PaypalActivity" />
+        <activity android:name="www.justme.co.in.vendor.activity.StripPaymentActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/api_key" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>
